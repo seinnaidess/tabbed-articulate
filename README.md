@@ -10,7 +10,7 @@ Troubleshooting:
   - if anything seems janky try running `yarn build-storybook`
   - I am running Node `12.16.3`, failure to build may mean you need to be on a higher version of Node. 
 
-Tip: Just in case you are not familiar with storybook, to see it _outside of storybook_ in a regular browser (it's hard to check responsiveness in storybook since it's kinda in a world of it's own) - click the middle icon top right.
+Tip: Just in case you are not familiar with storybook, to see it _outside of storybook_ in a regular browser (it's hard to check responsiveness in storybook since it's kinda in a world of it's own) - click the middle icon on the top right.
 
 
 
