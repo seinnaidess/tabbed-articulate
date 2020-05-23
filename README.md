@@ -2,12 +2,15 @@
 
 - install `$ yarn install` or `$ yarn`
 - run in storybook: `$ yarn storybook`
+- Open `Tabbed Section` from left sidebar.
 
-  note: if anything seems janky try running `yarn build-storybook`
+I created a couple extra stories to demonstrate how some edgecases are handled in the UI. 
 
-  Open `Tabbed Section` from left sidebar.
+Troubleshooting: 
+  - if anything seems janky try running `yarn build-storybook`
+  - I using on Node `12.16.3` 
 
-  Tip: Just in case you are not familiar with storybook, to see it _outside of storybook_ in a regular browser (it's hard to check responsiveness in storybook since it's kinda in a world of it's own) - click the middle icon top right.
+Tip: Just in case you are not familiar with storybook, to see it _outside of storybook_ in a regular browser (it's hard to check responsiveness in storybook since it's kinda in a world of it's own) - click the middle icon top right.
 
 
 
