@@ -41,18 +41,18 @@
 ### I would have liked to:
   _This could have gone on forever, because there are lots of things I would love to do with this to absolutely perfect it (and the list keeps growing)  - but at some point for the purposes of a coding challenge being returned in a timely manner, I had to allow some imperfection.  ;)_
 
-  *Arrows:*
+  **Arrows:**
     - rather than decide to show the arrows based on # of tab items passed, insteads detect when the width
       of the tabPanel compared vrs width the parent container and if it's longer, use the arrows - else not.
       However tabPanel's  `.clientWidth` always came back the same width at the container most likley because I am using `overflow:hidden` on the container. I am sure there's a way to do this however.
 
-  *Accessibility:*
+  **Accessibility:**
     - Spent more time ensuring it is fully accessible.
       Companies are out in these streets getting sued _left and right_, lol.
 
-  *Tests:* 
+  **Tests:** 
     - not a lot logic going on here, but maybe write some UI tests
   
-  *Animate:*
+  **Animate:**
     - I would have liked to animtate changes such as height and UI state changes when switching   tabs. I know there is a React transistions lib for this (animating between state changes) otherwise height changes, in particular, can be tricky to animate without starting off with a set `px` height. I once did it using margin (or padding or something) but it felt pretty hacky. Again, your transistions look great - what's your wizardry here?
 
