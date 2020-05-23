@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### To run:
 
-## Available Scripts
+- install `$ yarn install` or `$ yarn`
+- run in storybook: `$ yarn storybook`
 
-In the project directory, you can run:
+  note: if anything seems janky try running `yarn build-storybook`
 
-### `yarn start`
+  Open `Tabbed Section` from left sidebar.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  Tip: Just in case you are not familiar with storybook, to see it _outside of storybook_ in a regular browser (it's hard to check responsiveness in storybook since it's kinda in a world of it's own) - click the middle icon top right.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        --------------------------------------------------------------------
 
-### `yarn build`
+### Assumptions:
+  - Smallest sreensize/viewport would be a iPhone5 at 320px
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - That this puppy's width get's limited at some point.
+    I tone it down to `max-width: 60%` at 1200px (desktop)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  - Parent component positions tabbed container on the page,
+    thus tabbedContainer only cares about it's internal styling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Edgecases considered:
+  - `no data passed` => uses default props promting user to create a tab
+  - `empty prop array passed` => indicates user error, so overrides default props and renders hint
+  - `3 or less tabs`  => no arrows on hover
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### I would have liked to:
+  _This could have gone on forever, because there are lots of things I would love to do with this to absolutely perfect it (and the list keeps growing)  - but at some point for the purposes of a coding challenge being returned in a timely manner, I had to allow some imperfection.  ;)_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  Arrows:
+    - rather than decide to show the arrows based on # of tab items passed, insteads detect when the width
+      of the tabPanel compared vrs width the parent container and if it's longer, use the arrows - else not.
+      However tabPanel's  `.clientWidth` always came back the same width at the container most likley because I am using `overflow:hidden` on the container. I am sure there's a way to do this however.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  Tests:
+    - write tests
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Accessibility:
+    - Spent more time ensuring it is fully accessible.
+      Companies are out in these streets getting sued _left and right_, lol.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+  Animate:
+    - I would have liked to animtate changes such as height and UI state changes when switching   tabs. I know there is a React transistions lib for this (animating between state changes) otherwise height changes, in particular, can be tricky to animate without starting off with a set `px` height. I once did it using margin (or padding or something) but it felt pretty hacky. Again, your transistions look great - what's your wizardry here?
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+### Just some notes:
+    - Mobile-first CSS, using `styled-components`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    - I used an array of strings to seperate paragraphs of textin the `tabData` obj  - it was just  a guess of how paragraphs user input (collected from some sort of wizywig editor) _may_ get stored in the DB and be returned to the frontend in an API response.
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    - For 'sections' within a single tab I used the idea of data `blocks` where each block (`{}`)represents a section in which media, text, image/gifs, or other components can be passed. As many blocks as desired can be passed to a tab.
