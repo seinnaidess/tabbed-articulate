@@ -51,6 +51,7 @@
 
 
 ### Just some notes:
+
     - Mobile-first CSS, using `styled-components`
 
     - I used an array of strings to seperate paragraphs of textin the `tabData` obj  - it was just  a guess of how paragraphs user input (collected from some sort of wizywig editor) _may_ get stored in the DB and be returned to the frontend in an API response.
