@@ -23,7 +23,7 @@
   - Parent component positions tabbed container on the page,
     thus tabbedContainer only cares about it's internal styling
 
-### approach:
+### Some notes on my approach:
  - Mobile-first CSS, using `styled-components`
  
  - I used an array of strings to seperate paragraphs of textin the `tabData` obj  - it was just  a guess of how paragraphs of user input (collected from some sort of wizywig editor) _may_ get stored in the DB and be returned to the frontend in an API response.
