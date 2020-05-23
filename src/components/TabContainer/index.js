@@ -36,6 +36,8 @@ const TabContainer = ({ customId, tabData, wrapperStyles }) => {
   }
 
   const toggleArrowVisibility = () => {
+    // 2 tabs is the max visibility in phones (no arrows needed if only 2 tabs)
+    // so when we have more than two tabs we can use the arrows
     if(data.length < 3) return
     setArrowIsVisible(!arrowIsVisible)
   }
