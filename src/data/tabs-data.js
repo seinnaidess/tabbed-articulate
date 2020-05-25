@@ -60,8 +60,7 @@ export const data = [
       {
         header: 'Pass another component as a child',
         text: [
-          'A tabbed section in a tabbed section ...what the heck!',
-          'Note: The inner scroll arrows here actually scroll the parent container, this is because it hooks into the  tabList id and both have the same id'
+          'A tabbed section in a tabbed section ...what the heck!'
         ],
         component: <TabContainer tabData={tabData} wrapperStyles={wrapperStyles} customId={'inner'}/>
       }
